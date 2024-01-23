@@ -1,8 +1,12 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :own]
 
   def index
     @rooms = Room.all
+  end
+
+  def own
+    @rooms = current_user.rooms
   end
 
   def show
@@ -20,10 +24,6 @@ class RoomsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def own
-    @rooms = current_user.rooms
   end
 
   def edit
