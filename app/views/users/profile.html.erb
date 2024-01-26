@@ -1,0 +1,14 @@
+<h2>プロフィール</h2>
+<%= link_to '編集', users_profile_edit_path %>
+<p>
+  アイコン画像
+  <%= image_tag @user.profile_image.url %>
+</p>
+<p>
+  名前
+  <%= @user.name %>
+</p>
+<p>
+  自己紹介
+  <%= @user.introduction %>
+</p>

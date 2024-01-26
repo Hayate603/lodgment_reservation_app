@@ -1,0 +1,10 @@
+<h2>アカウント</h2>
+<% if current_user %>
+  <p>メールアドレス: <%= current_user.email %></p>
+  <p>パスワード: ******</p>
+<% else %>
+  <p>ログインしていません。</p>
+<% end %>
+
+<%= link_to '編集', edit_user_registration_path %>
+<%= link_to 'プロフィール', users_profile_path %>
