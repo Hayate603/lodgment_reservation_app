@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :own]
+  before_action :authenticate_user!, only: [:new, :create, :own, :show]
 
   def index
     @rooms = Room.all
@@ -10,6 +10,8 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @room = Room.find(params[:id])
+    @reservation = @room.reservations.build
   end
 
   def new

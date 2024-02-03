@@ -1,0 +1,41 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      room: 部屋
+      reservation: 予約
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        introduction: 自己紹介
+        profile_image: プロフィール画像
+        password: パスワード
+        password_confirmation: パスワード確認
+      room:
+        name: 名前
+        description: 説明
+        price: 価格
+        address: 住所
+        user_id: ユーザーID
+        image: 画像
+      reservation:
+        check_in: チェックイン日
+        check_out: チェックアウト日
+        number_of_people: 人数
+        user_id: ユーザーID
+        room_id: 部屋ID
+  errors:
+    messages:
+      blank: "を入力してください"
+      not_a_number: "は数値で入力してください"
+  devise:
+    sessions:
+      signed_in: 'ログインしました。'
+      signed_out: 'ログアウトしました。'
+    passwords:
+      send_instructions: 'パスワード再設定の手順をメールで送信しました。'
+    registrations:
+      signed_up: 'アカウント登録が完了しました。'
+      updated: 'アカウントが更新されました。'
+      destroyed: 'アカウントが削除されました。'

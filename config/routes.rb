@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     collection do
       get 'own' # ユーザーごとの部屋の一覧表示
     end
-    resources :reservations, only: [:new, :create, :show, :destroy]
+    resources :reservations, only: [:new, :create, :show, :destroy] do
+      collection do
+        get 'confirm'
+      end
+    end
   end
 end
