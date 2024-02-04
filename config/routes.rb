@@ -16,4 +16,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  # ユーザーが予約した部屋の一覧ページ用のルーティング
+  get 'user_reservations', to: 'reservations#user_reservations'
 end

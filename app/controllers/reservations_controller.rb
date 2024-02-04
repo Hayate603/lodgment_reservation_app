@@ -1,7 +1,10 @@
 class ReservationsController < ApplicationController
   before_action :set_room, only: [:new, :confirm, :create]
+  before_action :authenticate_user!
+  before_action :set_reservation, only: [:destroy]
 
-  def index
+  def user_reservations
+    @reservations = current_user.reservations.includes(:room)
   end
 
   def show
@@ -48,6 +51,8 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    @reservation.destroy
+    redirect_to user_reservations_path, notice: '予約が削除されました。'
   end
 
   private
@@ -58,5 +63,9 @@ class ReservationsController < ApplicationController
 
   def reservation_params
     params.require(:reservation).permit(:check_in, :check_out, :number_of_people, :room_id)
+  end
+
+  def set_reservation
+    @reservation = current_user.reservations.find(params[:id])
   end
 end
