@@ -3,19 +3,27 @@
 <table>
   <thead>
     <tr>
-      <th>部屋名</th>
+      <th>画像</th>
+      <th>施設名</th>
+      <th>紹介文</th>
+      <th>合計料金</th>
       <th>チェックイン</th>
       <th>チェックアウト</th>
-      <th>人数</th>
+      <th>予約確定日時</th>
     </tr>
   </thead>
   <tbody>
     <% @reservations.each do |reservation| %>
       <tr>
+        <td>
+            <%= image_tag reservation.room.image.url %>
+        </td>
         <td><%= reservation.room.name %></td>
+        <td><%= reservation.room.description %></td>
+        <td><%= reservation.total_price %></td>
         <td><%= reservation.check_in %></td>
         <td><%= reservation.check_out %></td>
-        <td><%= reservation.number_of_people %></td>
+        <td><%= reservation.updated_at %></td>
         <td>
         <%= link_to '削除', room_reservation_path(reservation.room, reservation), method: :delete, data: { confirm: '予約を削除してよろしいですか？' } %>
         </td>

@@ -11,6 +11,7 @@
   <%= f.hidden_field :check_out, value: @reservation.check_out %>
   <%= f.hidden_field :number_of_people, value: @reservation.number_of_people %>
   <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.hidden_field :total_price, value: @total_price %>
 
   <%= f.submit "この内容で予約する" %>
 <% end %>

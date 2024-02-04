@@ -21,7 +21,7 @@
         <td><%= room.name %></td>
         <td><%= room.description %></td>
         <td><%= room.price %></td>
-        <td><%= room.updated_at.to_s(:datetime_jp) %></td>
+        <td><%= room.updated_at.to_s(:datetime) %></td>
         <td><%= link_to '詳細', room %></td>
       </tr>
     <% end %>

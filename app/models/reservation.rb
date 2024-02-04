@@ -14,11 +14,4 @@ class Reservation < ApplicationRecord
       errors.add(:check_out, 'はチェックイン日より後でなければなりません')
     end
   end
-
-  # 宿泊費の合計を計算するメソッド
-  def total_price
-    number_of_nights = (check_out - check_in).to_i
-    total_price = number_of_nights * room.price * number_of_people
-    total_price
-  end
 end
