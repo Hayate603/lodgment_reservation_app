@@ -2,7 +2,11 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :own, :show]
 
   def index
-    @rooms = Room.all
+    if params[:prefecture].present?
+      @rooms = Room.where(prefecture: Room.prefectures[params[:prefecture]])
+    else
+      @rooms = Room.all
+    end
   end
 
   def own
@@ -39,6 +43,6 @@ class RoomsController < ApplicationController
 
   private
   def room_params
-    params.require(:room).permit(:name, :description, :price, :address, :image)
+    params.require(:room).permit(:name, :description, :price, :prefecture, :address, :image)
   end
 end

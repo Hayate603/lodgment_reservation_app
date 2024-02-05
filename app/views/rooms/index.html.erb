@@ -27,3 +27,9 @@
     <% end %>
   </tbody>
 </table>
+
+<%= form_with(url: rooms_path, method: :get, local: true) do |f| %>
+  <%= f.label :prefecture, "都道府県で検索" %>
+  <%= f.select :prefecture, Room.prefectures.map { |key, value| [value, key] }.prepend(["全て", ""]), prompt: "都道府県を選択" %>
+  <%= f.submit "検索" %>
+<% end %>
