@@ -20,7 +20,7 @@
 
   <div class="field">
     <%= f.label :prefecture, "都道府県" %><br/>
-    <%= f.select :prefecture, Room.prefectures.keys.map { |k| [Room.prefectures[k], k] }, { include_blank: "選択してください" } %>
+    <%= form.select :prefecture, ['北海道', '東京都', '大阪府', '京都府'], include_blank: true %>
   </div>
 
   <div class="field">

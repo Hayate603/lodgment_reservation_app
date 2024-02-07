@@ -2,8 +2,8 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :own, :show]
 
   def index
-    if params[:prefecture].present?
-      @rooms = Room.where(prefecture: Room.prefectures[params[:prefecture]])
+    if params[:prefecture].present? && params[:prefecture] != 'すべて'
+      @rooms = Room.where(prefecture: params[:prefecture])
     else
       @rooms = Room.all
     end

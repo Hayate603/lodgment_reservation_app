@@ -1,0 +1,121 @@
+input,
+textarea,
+select {
+  padding: 8px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin: 8px 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #1c1d3b;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.header-logo {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.header-logo a img {
+  height: auto;
+  width: 221px;
+}
+
+.header-logged-in,
+.header-logged-out {
+  display: flex;
+  align-items: center;
+}
+
+.user-trigger {
+  display: flex;
+  align-items: center; /* 子要素を中央揃えに */
+  position: relative; /* ドロップダウンメニューの基準点 */
+  cursor: pointer;
+}
+
+.user-name::after {
+  display: inline-block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  transform: rotate(135deg);
+  margin-left: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 10px 0;
+  color: #333;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #eaeaea;
+}
+
+
+.user-trigger:hover .dropdown-content {
+  display: block;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.header-logged-out a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.register-link {
+  padding: 15px;
+  background-color: #ff7757;
+  border-radius: 4px;
+}
+
+

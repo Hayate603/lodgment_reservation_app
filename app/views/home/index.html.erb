@@ -1,0 +1,16 @@
+<h2>Potepan Shareで<br>
+まだ体験したことのない<br>
+旅をしよう</h2>
+
+<%= form_with(url: rooms_path, method: :get, local: true) do |f| %>
+  <%= f.label :prefecture, "都道府県で検索" %>
+  <%= f.select :prefecture, ['北海道', '東京都', '大阪府', '京都府'], include_blank: 'すべて' %>
+  <%= f.submit "検索" %>
+<% end %>
+
+<ul>
+  <li><%= link_to "北海道", rooms_path(prefecture: 'hokkaido') %></li>
+  <li><%= link_to "東京都", rooms_path(prefecture: 'tokyo') %></li>
+  <li><%= link_to "大阪府", rooms_path(prefecture: 'osaka') %></li>
+  <li><%= link_to "京都府", rooms_path(prefecture: 'kyoto') %></li>
+</ul>

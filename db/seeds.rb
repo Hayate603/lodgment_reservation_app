@@ -18,8 +18,8 @@ User.limit(10).each_with_index do |user, i|
     price: 5000 * (i + 1),
     address: "住所#{i+1}",
     user_id: user.id,
-    prefecture: Room.prefectures.keys[i % Room.prefectures.keys.size],
-    # imageは、ImageUploaderを使用してアップロードする必要があります
+    prefecture: ['北海道', '東京都', '大阪府', '京都府'][i % 4], # 都道府県を直接指定
+    # 画像アップロードの実装は後述
   )
 end
 
