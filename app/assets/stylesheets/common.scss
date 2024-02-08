@@ -14,7 +14,6 @@ input[type="button"],
 button {
   cursor: pointer;
   border: none;
-  border-radius: 4px;
   padding: 10px 15px;
   margin: 8px 0;
 }
@@ -26,7 +25,6 @@ header {
   padding: 10px;
   background: #1c1d3b;
   color: white;
-  margin-bottom: 20px;
 }
 
 .header-logo {
@@ -118,4 +116,118 @@ header {
   border-radius: 4px;
 }
 
+.first-view {
+  background-image: image-url('cover.jpg');
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding-top: 117px;
+  height: 850px;
+  margin-bottom: 180px;
+}
 
+.page-title {
+  font-size: 84px;
+  margin-bottom: 48px;
+}
+
+.search-form {
+  padding: 32px;
+  background: hsla(0,0%,100%,.4);
+  width: 704px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 32px;
+}
+
+.btn {
+  background-color: #ff7757;
+  border-radius: 4px;
+  width: 100%;
+  padding: 7px 13px;
+  font-size: 18px;
+}
+
+.recommendations-title {
+  border-bottom: 3px solid #ff7757;
+  font-size: 44px;
+  line-height: 66px;
+  margin-bottom: 140px;
+  padding-bottom: 15px;
+  width: fit-content;
+}
+
+.recommendations-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 260px;
+}
+
+.recommendations-item {
+  width: calc(33.33333% - 21.33333px);
+  height: 455px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 26px;
+  position: relative;
+  overflow: hidden; /* 範囲外に溢れたコンテンツを非表示に */
+}
+
+.recommendations-item.tokyo {
+  background-image: image-url('tokyo.jpg');
+}
+
+.recommendations-item.osaka {
+  background-image: image-url('osaka.jpg');
+}
+
+.recommendations-item.kyoto {
+  background-image: image-url('kyoto.jpg');
+}
+
+.recommendations-item.hokkaido {
+  background-image: image-url('sapporo.jpg');
+}
+
+.recommendations-link {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  padding: 40px 24px;
+}
+
+.prefecture-name {
+  font-size: 28px;
+}
+
+.footer {
+  align-items: center;
+  background-color: #1c1d3b;
+  display: flex;
+  height: 465px;
+}
+
+.footer-logo {
+  margin-bottom: 16px;
+}
+
+.footer-logo img {
+  width: 294px;
+}
+
+.footer-copyright {
+  color: #fff;
+  font-family: Lato,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  margin-bottom: 0;
+}

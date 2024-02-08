@@ -1,16 +1,44 @@
-<h2>Potepan Shareで<br>
-まだ体験したことのない<br>
-旅をしよう</h2>
+<div class="first-view">
+  <div class="container">
+    <h2 class="page-title">Potepan Shareで<br>まだ体験したことのない<br>旅をしよう</h2>
+    <div class="search-form">
+      <%= form_with(url: rooms_path, method: :get, local: true, html: { class: "form-inline" }) do |f| %>
+        <div class="form-group">
+          <%= f.label :prefecture, "都道府県で検索", class: "form-label" %>
+          <%= f.select :prefecture, ['北海道', '東京都', '大阪府', '京都府'], { include_blank: 'すべて' }, { class: "form-select" } %>
+        </div>
+        <%= f.submit "検索", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= form_with(url: rooms_path, method: :get, local: true) do |f| %>
-  <%= f.label :prefecture, "都道府県で検索" %>
-  <%= f.select :prefecture, ['北海道', '東京都', '大阪府', '京都府'], include_blank: 'すべて' %>
-  <%= f.submit "検索" %>
-<% end %>
+<div class="container">
+  <h3 class="recommendations-title">おすすめエリア</h3>
+  <ul class="recommendations-list">
+    <li class="recommendations-item tokyo">
+      <%= link_to rooms_path(prefecture: 'tokyo'), class: "recommendations-link" do %>
+        <span class="prefecture-name">東京都</span>
+      <% end %>
+    </li>
+    <li class="recommendations-item osaka">
+      <%= link_to rooms_path(prefecture: 'osaka'), class: "recommendations-link" do %>
+        <span class="prefecture-name">大阪府</span>
+      <% end %>
+    </li>
+    <li class="recommendations-item kyoto">
+      <%= link_to rooms_path(prefecture: 'kyoto'), class: "recommendations-link" do %>
+        <span class="prefecture-name">京都府</span>
+      <% end %>
+    </li>
+    <li class="recommendations-item hokkaido">
+      <%= link_to rooms_path(prefecture: 'hokkaido'), class: "recommendations-link" do %>
+        <span class="prefecture-name">北海道</span>
+      <% end %>
+    </li>
+  </ul>
+</div>
 
-<ul>
-  <li><%= link_to "北海道", rooms_path(prefecture: 'hokkaido') %></li>
-  <li><%= link_to "東京都", rooms_path(prefecture: 'tokyo') %></li>
-  <li><%= link_to "大阪府", rooms_path(prefecture: 'osaka') %></li>
-  <li><%= link_to "京都府", rooms_path(prefecture: 'kyoto') %></li>
-</ul>
+
+
+
