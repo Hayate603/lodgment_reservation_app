@@ -1,8 +1,8 @@
 
-<div class="login-container">
-  <h2 class="login-title">ログイン</h2>
+<div class="form-container">
+  <h2 class="form-title">ログイン</h2>
 
-  <%= form_with model: @user, url: user_session_path, local: true, html: { class: "login-form" } do |f| %>
+  <%= form_with model: @user, url: user_session_path, local: true, html: { class: "user-form" } do |f| %>
 
     <div class="field">
       <%= f.label :email, class: "form-label" %>
