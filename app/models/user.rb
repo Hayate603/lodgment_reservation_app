@@ -4,4 +4,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :rooms
   has_many :reservations
+  validates :name, presence: true
 end
