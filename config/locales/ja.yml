@@ -19,6 +19,7 @@ ja:
         address: 住所
         user_id: ユーザーID
         image: 画像
+        prefecture: 都道府県名
       reservation:
         check_in: チェックイン日
         check_out: チェックアウト日
