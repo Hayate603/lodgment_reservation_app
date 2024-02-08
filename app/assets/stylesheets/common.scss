@@ -1,3 +1,4 @@
+/* 基本スタイル */
 input,
 textarea,
 select {
@@ -18,6 +19,7 @@ button {
   margin: 8px 0;
 }
 
+/* ヘッダー */
 header {
   display: flex;
   justify-content: space-between;
@@ -43,10 +45,11 @@ header {
   align-items: center;
 }
 
+/* ドロップダウンメニュー */
 .user-trigger {
   display: flex;
-  align-items: center; /* 子要素を中央揃えに */
-  position: relative; /* ドロップダウンメニューの基準点 */
+  align-items: center;
+  position: relative;
   cursor: pointer;
 }
 
@@ -91,7 +94,6 @@ header {
   background-color: #eaeaea;
 }
 
-
 .user-trigger:hover .dropdown-content {
   display: block;
 }
@@ -116,6 +118,7 @@ header {
   border-radius: 4px;
 }
 
+/* ファーストビュー */
 .first-view {
   background-image: image-url('cover.jpg');
   background-size: cover;
@@ -138,11 +141,13 @@ header {
   margin: 0 auto;
 }
 
+/* コンテナ */
 .container {
   max-width: 1440px;
   padding: 0 32px;
 }
 
+/* ボタン */
 .btn {
   background-color: #ff7757;
   border-radius: 4px;
@@ -151,6 +156,7 @@ header {
   font-size: 18px;
 }
 
+/* オススメセクション */
 .recommendations-title {
   border-bottom: 3px solid #ff7757;
   font-size: 44px;
@@ -175,9 +181,10 @@ header {
   background-position: center;
   border-radius: 26px;
   position: relative;
-  overflow: hidden; /* 範囲外に溢れたコンテンツを非表示に */
+  overflow: hidden;
 }
 
+/* おすすめの背景画像 */
 .recommendations-item.tokyo {
   background-image: image-url('tokyo.jpg');
 }
@@ -208,6 +215,7 @@ header {
   font-size: 28px;
 }
 
+/* フッター */
 .footer {
   align-items: center;
   background-color: #1c1d3b;
@@ -231,3 +239,111 @@ header {
   line-height: 17px;
   margin-bottom: 0;
 }
+
+/* ログインフォーム */
+.login-container {
+  max-width: 704px;
+  margin: 132px auto;
+  padding: 32px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  text-align: center;
+  font-size: 32px;
+}
+.login-form {
+  margin-top: 24px;
+}
+
+.form-label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.remember-me-checkbox {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox {
+  margin-right: 10px;
+}
+
+.checkbox-label {
+  margin-bottom: 0;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  color: #333;
+  line-height: 24px;
+}
+
+/* チェックボックスのカスタムスタイル */
+.checkbox-label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #9c9c9c;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.checkbox-label:after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 8px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  visibility: hidden;
+}
+
+/* チェックされた時のスタイル変更 */
+.form-checkbox:checked + .checkbox-label:before {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.form-checkbox:checked + .checkbox-label:after {
+  visibility: visible;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #ff7757;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+}
+
+

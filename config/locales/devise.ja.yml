@@ -1,0 +1,39 @@
+ja:
+  errors:
+    messages:
+      expired: "期限切れです。新しくリクエストしてください。"
+      not_found: "見つかりませんでした。"
+      already_confirmed: "は既に確認済みです。"
+      not_locked: "はロックされていません。"
+      not_saved:
+        one: "この %{resource} を保存できませんでした。1つのエラーがあります。"
+        other: "この %{resource} を保存できませんでした。%{count}つのエラーがあります。"
+
+  devise:
+    failure:
+      already_authenticated: "既にログインしています。"
+      unauthenticated: "ログインまたは登録が必要です。"
+      unconfirmed: "アカウントの確認が済んでいません。メールを確認してください。"
+      locked: "アカウントがロックされています。"
+      invalid: "メールまたはパスワードが無効です。"
+      invalid_token: "認証トークンが無効です。"
+      timeout: "セッションの有効期限が切れました。再度ログインしてください。"
+      inactive: "アカウントが有効化されていません。"
+      last_attempt: "もう一度間違えるとアカウントがロックされます。"
+      locked: "アカウントがロックされました。"
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+    passwords:
+      send_instructions: "パスワード再設定の手順を数分以内にメールで送信します。"
+      updated: "パスワードが変更されました。ログインも新しいパスワードで行われました。"
+      updated_not_active: "パスワードが変更されました。"
+      no_token: "パスワード再設定のトークンがありません。メールからパスワード再設定を行ってください。"
+    confirmations:
+      send_instructions: "アカウント確認の手順を数分以内にメールで送信します。"
+      confirmed: "アカウントが確認されました。ログインしてください。"
+    registrations:
+      signed_up: "サインアップに成功しました。"
+      updated: "アカウントが更新されました。"
+      destroyed: "アカウントが削除されました。"
+      signed_up_but_unconfirmed: "確認メールが送信されました。リンクを開いてアカウントを有効にしてください。"
