@@ -6,6 +6,7 @@
     <tr>
       <th>画像</th>
       <th>施設名</th>
+      <th>住所</th>
       <th>紹介文</th>
       <th>料金</th>
       <th>作成日</th>
@@ -15,11 +16,18 @@
     <% @rooms.each do |room| %>
       <tr>
         <td><%= image_tag room.image.url %></td>
-        <td><%= room.name %></td>
+        <td><%= link_to room.name, room %></td>
+        <td><%= room.prefecture %></td>
         <td><%= room.description %></td>
         <td><%= room.price %></td>
-        <td><%= room.updated_at.to_s(:datetime_jp) %></td>
+        <td><%= room.updated_at.to_s(:datetime) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= form_with(url: rooms_path, method: :get, local: true) do |f| %>
+  <%= f.label :prefecture, "都道府県で検索" %>
+  <%= f.select :prefecture, ['北海道', '東京都', '大阪府', '京都府'], include_blank: 'すべて' %>
+  <%= f.submit "検索" %>
+<% end %>
