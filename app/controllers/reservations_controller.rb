@@ -18,32 +18,26 @@ class ReservationsController < ApplicationController
   def confirm
     @reservation = @room.reservations.new(reservation_params)
     @reservation.user = current_user
-    check_in_date = @reservation.check_in
-    check_out_date = @reservation.check_out
 
-    # 宿泊日数を計算
-    number_of_nights = (check_out_date - check_in_date).to_i
-
-    # 合計金額を計算（@roomの価格 * 宿泊日数 * 予約された人数）
-    @total_price = @room.price * number_of_nights * @reservation.number_of_people
-
-    unless @reservation.valid?
+    # 宿泊日数と合計金額の計算
+    if @reservation.valid?
+      number_of_nights = (@reservation.check_out - @reservation.check_in).to_i
+      @total_price = @room.price * number_of_nights * @reservation.number_of_people
+    else
       render 'rooms/show' and return
     end
-
   end
+
+
 
   def create
     @reservation = current_user.reservations.build(reservation_params.merge(room_id: @room.id))
 
     # 宿泊日数と合計金額の再計算
-    check_in_date = @reservation.check_in
-    check_out_date = @reservation.check_out
-    number_of_nights = (check_out_date - check_in_date).to_i
-    total_price = @room.price * number_of_nights * @reservation.number_of_people
-
-    # 再計算した合計金額を設定
-    @reservation.total_price = total_price
+    if @reservation.check_in && @reservation.check_out
+      number_of_nights = (@reservation.check_out - @reservation.check_in).to_i
+      @reservation.total_price = @room.price * number_of_nights * @reservation.number_of_people
+    end
 
     if @reservation.save
       redirect_to room_path(@room), notice: '予約が完了しました。'
@@ -52,6 +46,7 @@ class ReservationsController < ApplicationController
       render 'rooms/show', status: :unprocessable_entity
     end
   end
+
 
   def edit
   end
