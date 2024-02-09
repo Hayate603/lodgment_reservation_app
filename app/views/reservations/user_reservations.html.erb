@@ -1,34 +1,36 @@
 <h1>予約一覧</h1>
 
-<table>
+<table class="room-table">
   <thead>
     <tr>
-      <th>画像</th>
-      <th>施設名</th>
-      <th>紹介文</th>
-      <th>合計料金</th>
-      <th>チェックイン</th>
-      <th>チェックアウト</th>
-      <th>予約確定日時</th>
+      <th class="room-header">画像</th>
+      <th class="room-header">施設名</th>
+      <th class="room-header">紹介文</th>
+      <th class="room-header">合計料金</th>
+      <th class="room-header">チェックイン</th>
+      <th class="room-header">チェックアウト</th>
+      <th class="room-header">予約確定日時</th>
+      <th class="room-header">操作</th>
     </tr>
   </thead>
   <tbody>
     <% @reservations.each do |reservation| %>
       <tr>
-        <td>
-            <%= image_tag reservation.room.image.url %>
+        <td class="room-data">
+          <%= image_tag reservation.room.image.url, class: "room-image" %>
         </td>
-        <td><%= reservation.room.name %></td>
-        <td><%= reservation.room.description %></td>
-        <td><%= reservation.total_price %></td>
-        <td><%= reservation.check_in %></td>
-        <td><%= reservation.check_out %></td>
-        <td><%= reservation.updated_at %></td>
-        <td>
-        <%= link_to '削除', room_reservation_path(reservation.room, reservation), method: :delete, data: { confirm: '予約を削除してよろしいですか？' } %>
+        <td class="room-data"><%= reservation.room.name %></td>
+        <td class="room-data"><%= reservation.room.description %></td>
+        <td class="room-data"><%= reservation.total_price %></td>
+        <td class="room-data"><%= reservation.check_in.strftime("%Y/%m/%d") %></td>
+        <td class="room-data"><%= reservation.check_out.strftime("%Y/%m/%d") %></td>
+        <td class="room-data"><%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+        <td class="room-data">
+          <%= link_to '削除', room_reservation_path(reservation.room, reservation), method: :delete, data: { confirm: '予約を削除してよろしいですか？' } %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
 

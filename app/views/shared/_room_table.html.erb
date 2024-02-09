@@ -1,0 +1,24 @@
+<table class="room-table">
+  <thead>
+    <tr>
+      <th class="room-header">画像</th>
+      <th class="room-header">施設名</th>
+      <th class="room-header">住所</th>
+      <th class="room-header">紹介文</th>
+      <th class="room-header">料金</th>
+      <th class="room-header">作成日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td class="room-data"><%= image_tag room.image.url, class: "room-image" %></td>
+        <td class="room-data"><%= link_to room.name, room %></td>
+        <td class="room-data"><%= room.prefecture %></td>
+        <td class="room-data"><%= room.description %></td>
+        <td class="room-data"><%= room.price %></td>
+        <td class="room-data"><%= room.updated_at.to_s(:short) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

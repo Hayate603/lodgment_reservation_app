@@ -392,5 +392,31 @@ header {
   object-fit: cover;
 }
 
-/* アカウント情報編集ページ */
+/* ルーム */
+.room-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* 列幅を均等に配分 */
+}
 
+.room-header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.room-data {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.room-image {
+  width: 250px; /* または適切なサイズ */
+  height: auto;
+  margin: 0 auto; /* 画像を中央揃え */
+  display: block;
+}
