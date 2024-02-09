@@ -1,14 +1,17 @@
-<h2>プロフィール</h2>
-<%= link_to '編集', users_profile_edit_path %>
-<p>
-  アイコン画像
-  <%= image_tag @user.profile_image.url %>
-</p>
-<p>
-  名前
-  <%= @user.name %>
-</p>
-<p>
-  自己紹介
-  <%= @user.introduction %>
-</p>
+<div class="container">
+  <h2 class="account-title">プロフィール</h2>
+  <div class="profile-info">
+    <div class="profile-info-item">
+      <span class="text-label">アイコン画像:</span>
+      <%= image_tag @user.profile_image.url, class: "profile-image" %>
+    </div>
+    <p class="text-info">名前: <%= @user.name %></p>
+    <p class="text-info">自己紹介: <%= @user.introduction %></p>
+  </div>
+
+  <div class="profile-actions">
+    <%= link_to '編集', users_profile_edit_path, class: "action-link" %>
+    <%= link_to 'アカウント', users_account_path, class: "action-link" %>
+  </div>
+</div>
+

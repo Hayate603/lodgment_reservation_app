@@ -346,4 +346,51 @@ header {
   display: block;
 }
 
+/* アカウント設定 */
+/* 共通のスタイル */
+.account-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.text-info {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.action-link {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.action-link:hover {
+  background-color: #0056b3;
+}
+
+/* プロフィール */
+.profile-info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.text-label {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.profile-image img {
+  max-height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* アカウント情報編集ページ */
 
