@@ -1,0 +1,422 @@
+/* 基本スタイル */
+input,
+textarea,
+select {
+  padding: 8px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 15px;
+  margin: 8px 0;
+}
+
+/* ヘッダー */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #1c1d3b;
+  color: white;
+}
+
+.header-logo {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.header-logo a img {
+  height: auto;
+  width: 221px;
+}
+
+.header-logged-in,
+.header-logged-out {
+  display: flex;
+  align-items: center;
+}
+
+/* ドロップダウンメニュー */
+.user-trigger {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.user-name::after {
+  display: inline-block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  transform: rotate(135deg);
+  margin-left: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 10px 0;
+  color: #333;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #eaeaea;
+}
+
+.user-trigger:hover .dropdown-content {
+  display: block;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.header-logged-out a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.register-link {
+  padding: 15px;
+  background-color: #ff7757;
+  border-radius: 4px;
+}
+
+/* ファーストビュー */
+.first-view {
+  background-image: image-url('cover.jpg');
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding-top: 117px;
+  height: 850px;
+  margin-bottom: 180px;
+}
+
+.page-title {
+  font-size: 84px;
+  margin-bottom: 48px;
+}
+
+.search-form {
+  padding: 32px;
+  background: hsla(0,0%,100%,.4);
+  width: 704px;
+  margin: 0 auto;
+}
+
+/* コンテナ */
+.container {
+  max-width: 1440px;
+  padding: 0 32px;
+}
+
+/* ボタン */
+.btn {
+  background-color: #ff7757;
+  border-radius: 4px;
+  width: 100%;
+  padding: 7px 13px;
+  font-size: 18px;
+}
+
+/* オススメセクション */
+.recommendations-title {
+  border-bottom: 3px solid #ff7757;
+  font-size: 44px;
+  line-height: 66px;
+  margin-bottom: 140px;
+  padding-bottom: 15px;
+  width: fit-content;
+}
+
+.recommendations-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 260px;
+}
+
+.recommendations-item {
+  width: calc(33.33333% - 21.33333px);
+  height: 455px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 26px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* おすすめの背景画像 */
+.recommendations-item.tokyo {
+  background-image: image-url('tokyo.jpg');
+}
+
+.recommendations-item.osaka {
+  background-image: image-url('osaka.jpg');
+}
+
+.recommendations-item.kyoto {
+  background-image: image-url('kyoto.jpg');
+}
+
+.recommendations-item.hokkaido {
+  background-image: image-url('sapporo.jpg');
+}
+
+.recommendations-link {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  padding: 40px 24px;
+}
+
+.prefecture-name {
+  font-size: 28px;
+}
+
+/* フッター */
+.footer {
+  align-items: center;
+  background-color: #1c1d3b;
+  display: flex;
+  height: 465px;
+}
+
+.footer-logo {
+  margin-bottom: 16px;
+}
+
+.footer-logo img {
+  width: 294px;
+}
+
+.footer-copyright {
+  color: #fff;
+  font-family: Lato,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  margin-bottom: 0;
+}
+
+/* ログインフォーム */
+.form-container {
+  max-width: 704px;
+  margin: 132px auto;
+  padding: 32px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  text-align: center;
+  font-size: 32px;
+}
+.user-form {
+  margin-top: 24px;
+}
+
+.form-label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.remember-me-checkbox {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox {
+  margin-right: 10px;
+}
+
+.checkbox-label {
+  margin-bottom: 0;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  color: #333;
+  line-height: 24px;
+}
+
+/* チェックボックスのカスタムスタイル */
+.checkbox-label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #9c9c9c;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.checkbox-label:after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 8px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  visibility: hidden;
+}
+
+/* チェックされた時のスタイル変更 */
+.form-checkbox:checked + .checkbox-label:before {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.form-checkbox:checked + .checkbox-label:after {
+  visibility: visible;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #ff7757;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+}
+
+/* アカウント設定 */
+/* 共通のスタイル */
+.account-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.text-info {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.action-link {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.action-link:hover {
+  background-color: #0056b3;
+}
+
+/* プロフィール */
+.profile-info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.text-label {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.profile-image img {
+  max-height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ルーム */
+.room-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* 列幅を均等に配分 */
+}
+
+.room-header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.room-data {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.room-image {
+  width: 250px; /* または適切なサイズ */
+  height: auto;
+  margin: 0 auto; /* 画像を中央揃え */
+  display: block;
+}

@@ -1,0 +1,16 @@
+<div class="container">
+  <h2 class="account-title">アカウント</h2>
+  <div class="account-info">
+    <% if current_user %>
+      <p class="text-info">メールアドレス: <%= current_user.email %></p>
+      <p class="text-info">パスワード: ******</p>
+    <% else %>
+      <p class="text-info">ログインしていません。</p>
+    <% end %>
+  </div>
+
+  <div class="account-actions">
+    <%= link_to '編集', edit_user_registration_path, class: "action-link" %>
+    <%= link_to 'プロフィール', users_profile_path, class: "action-link" %>
+  </div>
+</div>

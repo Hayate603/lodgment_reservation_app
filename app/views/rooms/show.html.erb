@@ -1,0 +1,47 @@
+<% if @reservation.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+    <ul>
+    <% @reservation.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= link_to '戻る', root_path %>
+<p>
+  <%= image_tag @room.image.url %>
+</p>
+<p>
+  <%= @room.name %>
+</p>
+<p>
+  <%= @room.description %>
+</p>
+<p>
+  <%= @room.price %>
+</p>
+<p>
+  <%= @room.address %>
+</p>
+<p>
+  <%= @room.description %>
+</p>
+
+<%= form_with url: confirm_room_reservations_path(@room), method: :get, local: true, scope: :reservation do |f| %>
+  <div class="field">
+    <%= f.label :check_in, "チェックイン日" %>
+    <%= f.date_field :check_in %>
+  </div>
+  <div class="field">
+    <%= f.label :check_out, "チェックアウト日" %>
+    <%= f.date_field :check_out %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_people, "人数" %>
+    <%= f.number_field :number_of_people %>
+  </div>
+  <div class="actions">
+    <%= f.submit "予約確認" %>
+  </div>
+<% end %>

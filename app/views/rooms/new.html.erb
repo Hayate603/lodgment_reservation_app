@@ -1,0 +1,42 @@
+<h2>新規登録</h2>
+
+<%= render "shared/error", obj: @room %>
+
+<%= form_with model: @room do |f| %>
+  <div class="field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %><br/>
+    <%= f.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prefecture, "都道府県" %><br/>
+    <%= f.select :prefecture, ['北海道', '東京都', '大阪府', '京都府'], include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br/>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %><br/>
+    <%= f.file_field :image %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit "保存" %>
+  </div>
+<% end %>
+

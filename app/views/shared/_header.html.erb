@@ -1,0 +1,29 @@
+<header>
+  <div class="header-logo">
+    <%= link_to root_path do %>
+      <%= image_tag 'logo.png', alt: 'サイトロゴ' %>
+    <% end %>
+  </div>
+
+  <% if user_signed_in? %>
+    <div class="header-logged-in">
+      <div class="user-trigger">
+        <%= image_tag current_user.profile_image.url, alt: 'プロフィール画像', class: 'profile-image' %>
+        <span class="user-name"><%= current_user.name %></span>
+        <div class="dropdown-content">
+          <%= link_to '施設の新規登録', new_room_path %>
+          <%= link_to '予約一覧', user_reservations_path %>
+          <%= link_to '登録済み一覧', own_rooms_path %>
+          <%= link_to 'アカウント設定', users_account_path %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="header-logged-out">
+      <%= link_to 'ログイン', new_user_session_path %>
+      <%= link_to '新規登録', new_user_registration_path, class: 'register-link' %>
+    </div>
+  <% end %>
+</header>
+

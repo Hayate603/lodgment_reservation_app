@@ -1,0 +1,9 @@
+<div class="container">
+  <%= render 'shared/room_table' %>
+
+  <%= form_with(url: rooms_path, method: :get, local: true) do |f| %>
+    <%= f.label :prefecture, "都道府県で検索" %>
+    <%= f.select :prefecture, ['北海道', '東京都', '大阪府', '京都府'], include_blank: 'すべて' %>
+    <%= f.submit "検索" %>
+  <% end %>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 class="account-title">プロフィール編集ページ</h2>
+  <%= form_with model: @user, url: users_profile_path, method: :patch, local: true, html: { multipart: true, class: "profile-form" } do |f| %>
+
+    <div class="form-group">
+      <%= f.label :name, class: "form-label" %><br/>
+      <%= f.text_field :name, autofocus: true, class: "form-input" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :introduction, class: "form-label" %><br/>
+      <%= f.text_area :introduction, class: "form-input" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :profile_image, class: "form-label" %><br/>
+      <%= f.file_field :profile_image, class: "form-input" %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "保存", class: "action-link" %>
+      <%= link_to 'キャンセル', users_profile_path, class: "action-link" %>
+    </div>
+  <% end %>
+</div>
+
